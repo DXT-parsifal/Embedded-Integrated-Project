@@ -1,0 +1,14 @@
+INPUT(
+./debug\qrc_resources.o
+./debug\dial.o
+./debug\func.o
+./debug\main.o
+./debug\login.o
+./debug\regist.o
+./debug\switchbutton.o
+./debug\moc_dial.o
+./debug\moc_func.o
+./debug\moc_login.o
+./debug\moc_regist.o
+./debug\moc_switchbutton.o
+);

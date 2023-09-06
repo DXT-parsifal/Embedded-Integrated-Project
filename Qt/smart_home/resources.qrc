@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>res/机器人.png</file>
+        <file>res/机器人_speak.png</file>
+        <file>res/智能家居3.png</file>
+        <file>res/头像.jpg</file>
+        <file>res/设备ID：003700254847501220383635.png</file>
+    </qresource>
+</RCC>

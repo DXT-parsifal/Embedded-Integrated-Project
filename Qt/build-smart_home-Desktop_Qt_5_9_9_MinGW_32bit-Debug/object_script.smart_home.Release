@@ -1,0 +1,14 @@
+INPUT(
+./release\qrc_resources.o
+./release\dial.o
+./release\func.o
+./release\main.o
+./release\login.o
+./release\regist.o
+./release\switchbutton.o
+./release\moc_dial.o
+./release\moc_func.o
+./release\moc_login.o
+./release\moc_regist.o
+./release\moc_switchbutton.o
+);
