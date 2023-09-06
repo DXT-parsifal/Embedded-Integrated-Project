@@ -1,7 +1,7 @@
 # Embedded-Integrated-Project
 嵌入式综合项目：
   STM32F407基于ARM Cortex-M4处理器，QT5.9.9客户端，TCP、MQTT通信，JSON通信规则，云服务器Linux操作系统，MySQL数据存储转发。
-QT客户端界面：
+### QT客户端界面：
   ![{$9}3C I Y_TR$2ATW{XTXC](https://github.com/DXT-parsifal/Embedded-Integrated-Project/assets/80907208/7ca51922-12f1-461e-af9a-906939472da2)
 
 ### 下位机：
