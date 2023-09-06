@@ -1,0 +1,57 @@
+#include "stm32f4xx.h"                  // Device header
+#include "led.h"
+#include "beep.h"
+#include "key.h"
+#include "exit.h"
+#include "delay.h"
+#include "uart.h"
+#include "stdio.h"
+#include "iwdog.h"
+#include "timer.h"
+#include "dht11.h"
+/*---------------------------------------
+1.创建 w25q64.c 和 w25q64.h 
+2.将其加入到工程
+3.查看原理图得到引脚所对应片选
+4.编写相应的函数
+     .读写操作
+----------------------------------------*/
+#include "spi.h"
+#include "w25q64.h"
+#include "string.h"
+int main()
+{
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);	//先中断优先级分组：2分组
+    delay_Init(168);								//滴答定时器初始化：168Mhz
+    UART1_Init(115200);								//串口1初始化,波特率为115200
+	KEY_Init();										//KEY按键初始化
+	IIC_Init();										//IIC初始化
+
+	SPI1_Init();	//SPI1初始化
+	W25Q64_Init();	//flash的W25Q64初始化
+	
+	int value = 0;
+	char buf_w[20];
+	char buf_r[20];
+    while(1)	//防止程序跑飞
+    {
+		switch(KEY_Scan())
+		{
+			case 1:
+				value += 20;
+				sprintf(buf_w,"value = %d",value);
+			
+				//先擦除
+				W25Q64_Erasr(0x00);
+			
+				//写入数据
+				W25Q64_Write_Data(0x00,buf_w,strlen(buf_w)+1);
+				break;
+			case 2:
+				W25Q64_Read_Data(0x00,buf_r,sizeof(buf_r));
+				printf("buf_r = %s\n",buf_r);
+				break;
+		}
+    }
+}
+
