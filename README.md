@@ -4,7 +4,7 @@
 QT客户端界面：
   ![{$9}3C I Y_TR$2ATW{XTXC](https://github.com/DXT-parsifal/Embedded-Integrated-Project/assets/80907208/7ca51922-12f1-461e-af9a-906939472da2)
 
-# 下位机：
+### 下位机：
   STM32F407裸机开发：开发环境前提需要向ESP8266WIFI模块烧录带MQTT的SDK固件，控制部分有三个led、fan（PWM调节，定时器TIM控制）、beep,tem、hum（DHT11）在OLED显示屏（I2C）显示，并具有按键菜单，AT24C02(EEPROM)实现掉电保护。数据传输部分首先连接WIFI，再订阅自己ChipID的主题，上传时下位机发送的主题和上位机订阅主题一致（调试使用），MQTT服务器订阅下位机发送的主题信息，写入数据库；并且实现定时中断上传状态数据。下位机还需解析下传的ChipID主题的控制JSON数据。开发语言：C
 
 # 上位机：
