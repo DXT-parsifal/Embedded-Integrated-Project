@@ -21,5 +21,5 @@
   下位机ESP8266和STM32需要实现串口转发，调试AT使得能够连上WIFI。
   上位机语音识别调取百度云API，JSON解析识别结果。
 
-star star star!!!(第一次写完整个项目分享，感谢star支持)
+star star star!!!(第一次写完整的项目分享，感谢star支持)
                                           ----括号侠
